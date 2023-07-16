@@ -11,11 +11,16 @@ public class BookCart_HomePage extends BookCart_Base{
 		super();
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public static By bookCartLogo = By.xpath("//span[@class='mat-button-wrapper']");
+	public static By loginButton = By.xpath("//button[@class='mat-focus-indicator mat-button mat-button-base ng-star-inserted']");
 	
 	public boolean DisplayingHomeCartLogo() {
 		waitForElementToBeVisibile(bookCartLogo);
 		return driver.findElement(bookCartLogo).isDisplayed();
+	}
+	
+	public void clickingLoginButton() {
+		 driver.findElement(loginButton).click();
 	}
 }

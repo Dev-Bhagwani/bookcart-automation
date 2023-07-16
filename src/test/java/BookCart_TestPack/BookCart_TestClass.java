@@ -12,13 +12,13 @@ import ResourcePack.BookCart_Base;
 public class BookCart_TestClass extends BookCart_Base {
 	
 	@Test
-	public void BookCartLogin() throws IOException, InterruptedException{
+public void BookCartRegister() throws IOException, InterruptedException{
 		
 		// HomePage
 		Assert.assertTrue(homePage.DisplayingHomeCartLogo());
+		homePage.clickingLoginButton();
 		
 		//Login Page
-		loginPage.clickingLoginButton();
 		Assert.assertTrue(loginPage.DisplayingLoginLogo());
 		Assert.assertTrue(loginPage.DisplayingRegisterButton());
 		loginPage.clickingRegisterButton();
@@ -33,8 +33,20 @@ public class BookCart_TestClass extends BookCart_Base {
 		registrationPage.EnteringDataInConfirmPasswordField();
 		registrationPage.ClickingEyeButton2();
 		registrationPage.ClickingGenderRadioButton();
-		registrationPage.ClickingRegisterButton();
+//		registrationPage.ClickingRegisterButton();
+		
 	}
+	@Test
+	public void TestCase_3() throws InterruptedException {
+		
+		//user now navigated to Login Page
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.EnteringDataInUsernameField();
+		loginPage.EnteringDataInPasswordField();
+		loginPage.ClickingLoginButton();
+	}
+	
 	
 	@AfterMethod
 	public void ClosingBrowser() {
