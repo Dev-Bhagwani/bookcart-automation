@@ -93,7 +93,23 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingRegisterButton();
 		// Last Name Appears in Red Color
 		Thread.sleep(2000);
-
+	}	
+	
+	@Test  // Test Case -7
+	// Verify if user is able to register  without entering Password & Confirm Password
+	public void TestCase_7() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringDataInFirstNameTextfield();
+		registrationPage.EnteringDataInLastNameTextField();
+		registrationPage.EnteringDataInUserNameTextfield();
+		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingRegisterButton();
+		// Password & Confirm Password Appears in Red Color
+		Thread.sleep(2000);
+		
 	}
 	
 	@AfterMethod
