@@ -34,7 +34,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingEyeButton2();
 		registrationPage.ClickingGenderRadioButton();
 //		registrationPage.ClickingRegisterButton();
-		
+		Thread.sleep(3000);
 	}
 	@Test
 	public void TestCase_3() throws InterruptedException {
@@ -45,8 +45,22 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		loginPage.EnteringDataInUsernameField();
 		loginPage.EnteringDataInPasswordField();
 		loginPage.ClickingLoginButton();
+		Thread.sleep(3000);
 	}
 	
+	@Test
+	// "Verify that Registration page shows alert message i.e. (User Name is not available) when entering the Existing Username 
+	public void TestCase_4() throws InterruptedException {
+	homePage.clickingLoginButton();
+	Assert.assertTrue(loginPage.DisplayingLoginLogo());
+	loginPage.clickingRegisterButton();
+	Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+	registrationPage.EnteringDataInUserNameTextfield();
+	registrationPage.ClickingRegisterButton();
+	Assert.assertTrue(registrationPage.DisplayingUserNameIsNotAvailable());
+	Thread.sleep(3000);
+		
+	}
 	
 	@AfterMethod
 	public void ClosingBrowser() {

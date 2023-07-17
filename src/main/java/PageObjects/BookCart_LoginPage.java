@@ -12,15 +12,15 @@ public class BookCart_LoginPage extends BookCart_Base{
 			PageFactory.initElements(driver, this);
 		}
 		
-		public static By loginHeader = By.xpath("//h3[text()='Login']");
+		public static By LoginHeader = By.xpath("//h3[text()='Login']");
 		public static By RegisterButton = By.xpath("//button[@class='mat-focus-indicator mat-elevation-z4 mat-raised-button mat-button-base']");
 		public static By UsernameTextField = By.xpath("//input[@data-placeholder='Username']");
 		public static By passowrdTextField = By.xpath("//input[@data-placeholder='Password']");
 		public static By LoginButton = By.xpath("//button[@class='mat-focus-indicator mat-raised-button mat-button-base mat-primary']");
 		
 		public boolean DisplayingLoginLogo() {
-			waitForElementToBeVisibile(loginHeader);
-			return driver.findElement(loginHeader).isDisplayed();
+			waitForElementToBeVisibile(LoginHeader);
+			return driver.findElement(LoginHeader).isDisplayed();
 		}
 		
 		public boolean DisplayingRegisterButton() {
