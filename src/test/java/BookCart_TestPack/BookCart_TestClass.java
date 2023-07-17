@@ -18,7 +18,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		Assert.assertTrue(homePage.DisplayingHomeCartLogo());
 		homePage.clickingLoginButton();
 		
-		//Login Page
+//		//Login Page
 		Assert.assertTrue(loginPage.DisplayingLoginLogo());
 		Assert.assertTrue(loginPage.DisplayingRegisterButton());
 		loginPage.clickingRegisterButton();
@@ -109,6 +109,25 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingRegisterButton();
 		// Password & Confirm Password Appears in Red Color
 		Thread.sleep(2000);
+	}
+	
+	@Test  // Test Case -8
+	// Verify if user is able to register  without entering the correct criteria for the Password 
+	public void TestCase_8() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringDataInFirstNameTextfield();
+		registrationPage.EnteringDataInLastNameTextField();
+		registrationPage.EnteringDataInUserNameTextfield();
+		registrationPage.EnteringWrongCriteriaInPassowrdField();
+		registrationPage.EnterWrongCriteriaInConfirmPasswordField();
+		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingCriteriaErrorTextInPasswordField());
+		// Password & Confirm Password Appears in Red Color
+		Thread.sleep(2000);
 		
 	}
 	
@@ -121,4 +140,12 @@ public void BookCartRegister() throws IOException, InterruptedException{
 	public void initializingBrowser() throws IOException {
 		initializeSession();
 	}
+	
+//	@BeforeTest
+//	public void RoutrToRegistrationPage() {
+//		homePage.clickingLoginButton();
+//		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+//		loginPage.clickingRegisterButton();
+//		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+//	}
 }

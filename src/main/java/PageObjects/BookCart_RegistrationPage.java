@@ -1,6 +1,6 @@
 package PageObjects;
 
-import org.bouncycastle.asn1.mozilla.PublicKeyAndChallenge;
+import org.bouncycastle.asn1.cmc.CMCObjectIdentifiers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
@@ -24,6 +24,8 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 	public static By GenderRadioButtonBy = By.xpath("(//span[@class='mat-radio-outer-circle'])[1]");
 	public static By RegisterButton = By.xpath("//mat-card-actions/button[@class='mat-focus-indicator mat-raised-button mat-button-base mat-primary']");
 	public static By errorTextUserNameIsNotAvailable = By.xpath("//mat-error[text()='User Name is not available']");
+	public static By CriteriaErrorTextPasswordField = By.xpath("//mat-error[@id='mat-error-1']");
+	public static By loginButtonInRegisterationPage = By.xpath("(//span[@class='mat-ripple mat-button-ripple'])[5]");
 	
 	public boolean DisplayingUserRegistrationHeader() {
 		return driver.findElement(UserRegistrationHeader).isDisplayed();
@@ -45,11 +47,20 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 		driver.findElement(PasswordField).sendKeys(prop.getProperty("Password"));
 	}
 	
+	public void  EnteringWrongCriteriaInPassowrdField() {
+		 driver.findElement(PasswordField).sendKeys(prop.getProperty("WrongPasswordCriteria"));
+	}
+	
+	public void EnterWrongCriteriaInConfirmPasswordField() {
+		driver.findElement(confirmPasswordField).sendKeys(prop.getProperty("WrongPasswordCriteria"));
+	}
+	
 	public void ClickingEyeButton1() {
 		driver.findElement(EyeButton1).click();
 	}
 	
 	public void EnteringDataInConfirmPasswordField() {
+		waitForElementToBeVisibile(confirmPasswordField);
 		driver.findElement(confirmPasswordField).sendKeys(prop.getProperty("Password"));
 	}
 	
@@ -62,12 +73,19 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 	}
 	
  	public void ClickingRegisterButton() {
- 		waitForElementToBeVisibile(RegisterButton);
 		driver.findElement(RegisterButton).click();
 	}
  	
  	public boolean DisplayingUserNameIsNotAvailable() {
  		waitForElementToBeVisibile(errorTextUserNameIsNotAvailable);
  		return driver.findElement(errorTextUserNameIsNotAvailable).isDisplayed();
+ 	}
+ 	
+ 	public boolean DisplayingCriteriaErrorTextInPasswordField() { 
+ 		return driver.findElement(CriteriaErrorTextPasswordField).isDisplayed();
+ 	}
+ 	
+ 	public void ClickingLoginButtonInRegistrationPage() {
+ 		driver.findElement(loginButtonInRegisterationPage).click();
  	}
 }
