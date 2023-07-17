@@ -208,7 +208,20 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.DisplayingErrorLastNameIsRequired();
 		registrationPage.EnteringDataInLastNameTextField();
 		Thread.sleep(2000);
-		
+	}
+	
+	@Test  // Test Case -14
+	// Verify that error message should be removed if user enters the data in User Name Textfield after error is displayed 
+	public void TestCase_14 () throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.ClickingUserNameTextField();
+		registrationPage.ClickingRegisterButton();
+		registrationPage.DisplayingErrorUserNameIsRequired();
+		registrationPage.EnteringDataInUserNameTextfield();
+		Thread.sleep(2000);
 	}
 	
 	@AfterMethod
