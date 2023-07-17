@@ -11,7 +11,7 @@ import ResourcePack.BookCart_Base;
 
 public class BookCart_TestClass extends BookCart_Base {
 	
-	@Test
+	@Test  // test case 1-2
 public void BookCartRegister() throws IOException, InterruptedException{
 		
 		// HomePage
@@ -36,7 +36,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 //		registrationPage.ClickingRegisterButton();
 		Thread.sleep(3000);
 	}
-	@Test
+	@Test  // Test Case -3
 	public void TestCase_3() throws InterruptedException {
 		
 		//user now navigated to Login Page
@@ -48,7 +48,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		Thread.sleep(3000);
 	}
 	
-	@Test
+	@Test  //Test Case -4
 	// "Verify that Registration page shows alert message i.e. (User Name is not available) when entering the Existing Username 
 	public void TestCase_4() throws InterruptedException {
 	homePage.clickingLoginButton();
@@ -59,7 +59,22 @@ public void BookCartRegister() throws IOException, InterruptedException{
 	registrationPage.ClickingRegisterButton();
 	Assert.assertTrue(registrationPage.DisplayingUserNameIsNotAvailable());
 	Thread.sleep(3000);
-		
+	}
+	
+	@Test   // Test Case -5
+	// Verify if user is able to register  without entering  First Name
+	public void TestCase_5() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringDataInLastNameTextField();
+		registrationPage.EnteringDataInPasswordField();
+		registrationPage.EnteringDataInConfirmPasswordField();
+		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingRegisterButton();
+		// First Name appears in red color
+		Thread.sleep(2000);
 	}
 	
 	@AfterMethod
