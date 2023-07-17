@@ -11,7 +11,7 @@ import ResourcePack.BookCart_Base;
 
 public class BookCart_TestClass extends BookCart_Base {
 	
-	@Test  // test case 1-2
+/*	@Test  // test case 1-2
 public void BookCartRegister() throws IOException, InterruptedException{
 		
 		// HomePage
@@ -33,8 +33,8 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.EnteringDataInConfirmPasswordField();
 		registrationPage.ClickingEyeButton2();
 		registrationPage.ClickingGenderRadioButton();
-//		registrationPage.ClickingRegisterButton();
-		Thread.sleep(3000);
+		registrationPage.ClickingRegisterButton();
+		Thread.sleep(2000);
 	}
 	@Test  // Test Case -3
 	public void TestCase_3() throws InterruptedException {
@@ -45,7 +45,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		loginPage.EnteringDataInUsernameField();
 		loginPage.EnteringDataInPasswordField();
 		loginPage.ClickingLoginButton();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 	
 	@Test  //Test Case -4
@@ -58,7 +58,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 	registrationPage.EnteringDataInUserNameTextfield();
 	registrationPage.ClickingRegisterButton();
 	Assert.assertTrue(registrationPage.DisplayingUserNameIsNotAvailable());
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 	}
 	
 	@Test   // Test Case -5
@@ -161,6 +161,25 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.EnteringDataInConfirmPasswordField();
 		registrationPage.ClickingRegisterButton();
 		// User is not able to see any errors but not able to register himself when not entering anything in Radio Button
+	}*/
+	
+	@Test  // Test Case -11
+	// Verify if user enters only Single Character both in First Name and Last Name in Registration Page  
+	public void TestCase_11() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringSingleCharacterInFirstNameTextField();
+		registrationPage.EnteringSingleCharacterInLastNameTextField();
+		registrationPage.EnteringDataInUserNameTextfield();
+		registrationPage.EnteringDataInPasswordField();
+		registrationPage.ClickingEyeButton1();
+		registrationPage.EnteringDataInConfirmPasswordField();
+		registrationPage.ClickingEyeButton2();
+		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingRegisterButton();
+		Thread.sleep(2000);
 	}
 	
 	@AfterMethod

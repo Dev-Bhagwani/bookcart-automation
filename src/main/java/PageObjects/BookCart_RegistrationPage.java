@@ -35,8 +35,16 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 		driver.findElement(FirstNameTextfield).sendKeys(prop.getProperty("FirstName"));
 	}
 	
+	public void EnteringSingleCharacterInFirstNameTextField() {
+		driver.findElement(FirstNameTextfield).sendKeys(prop.getProperty("FirstNameSingleCharacter"));  // for single character
+	}
+	
 	public void EnteringDataInLastNameTextField() {
 		driver.findElement(LastNameTextfield).sendKeys(prop.getProperty("LastName"));
+	}
+	
+	public void EnteringSingleCharacterInLastNameTextField() {
+		driver.findElement(LastNameTextfield).sendKeys(prop.getProperty("LastNameSingleCharacter"));
 	}
 	
 	public void EnteringDataInUserNameTextfield() {
@@ -92,4 +100,5 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  	public boolean DisplayingErrorInConfirmPasswordField()  {
  		return driver.findElement(ConfirmPasswordFieldErrorText).isDisplayed();
  	}
+ 	
 }
