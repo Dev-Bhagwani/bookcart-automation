@@ -11,7 +11,7 @@ import ResourcePack.BookCart_Base;
 
 public class BookCart_TestClass extends BookCart_Base {
 	
-/*	@Test  // test case 1-2
+	@Test  // test case 1-2
 public void BookCartRegister() throws IOException, InterruptedException{
 		
 		// HomePage
@@ -161,7 +161,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.EnteringDataInConfirmPasswordField();
 		registrationPage.ClickingRegisterButton();
 		// User is not able to see any errors but not able to register himself when not entering anything in Radio Button
-	}*/
+	}
 	
 	@Test  // Test Case -11
 	// Verify if user enters only Single Character both in First Name and Last Name in Registration Page  
@@ -180,6 +180,21 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		Thread.sleep(2000);
+	}
+	
+	@Test  // Test Case -12
+	// Verify that error message should be removed if user enters the data in First Name Textfield after error is displayed 
+	public void TestCase_12() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.ClickingFirstNameTextField();
+		registrationPage.ClickingRegisterButton();
+		registrationPage.DisplayingErrorFirstNameIsRequired();
+		registrationPage.EnteringDataInFirstNameTextfield();
+		Thread.sleep(2000);
+		
 	}
 	
 	@AfterMethod
