@@ -145,7 +145,22 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingRegisterButton();
 		Assert.assertTrue(registrationPage.DisplayingErrorInConfirmPasswordField());
 		Thread.sleep(2000);
-		
+	}
+	
+	@Test  // Test Case -10
+	// Verify if user is able to register   without filling the Radio Button
+	public void TestCase_10() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringDataInFirstNameTextfield();
+		registrationPage.EnteringDataInLastNameTextField();
+		registrationPage.EnteringDataInUserNameTextfield();
+		registrationPage.EnteringDataInPasswordField();
+		registrationPage.EnteringDataInConfirmPasswordField();
+		registrationPage.ClickingRegisterButton();
+		// User is not able to see any errors but not able to register himself when not entering anything in Radio Button
 	}
 	
 	@AfterMethod
@@ -157,12 +172,4 @@ public void BookCartRegister() throws IOException, InterruptedException{
 	public void initializingBrowser() throws IOException {
 		initializeSession();
 	}
-	
-//	@BeforeTest
-//	public void RoutrToRegistrationPage() {
-//		homePage.clickingLoginButton();
-//		Assert.assertTrue(loginPage.DisplayingLoginLogo());
-//		loginPage.clickingRegisterButton();
-//		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
-//	}
 }
