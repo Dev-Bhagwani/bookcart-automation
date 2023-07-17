@@ -1,6 +1,5 @@
 package PageObjects;
 
-import org.bouncycastle.asn1.cmc.CMCObjectIdentifiers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
@@ -24,8 +23,9 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 	public static By GenderRadioButtonBy = By.xpath("(//span[@class='mat-radio-outer-circle'])[1]");
 	public static By RegisterButton = By.xpath("//mat-card-actions/button[@class='mat-focus-indicator mat-raised-button mat-button-base mat-primary']");
 	public static By errorTextUserNameIsNotAvailable = By.xpath("//mat-error[text()='User Name is not available']");
-	public static By CriteriaErrorTextPasswordField = By.xpath("//mat-error[@id='mat-error-1']");
+	public static By CriteriaErrorTextPasswordField = By.xpath("//mat-error[@id='mat-error-0']");
 	public static By loginButtonInRegisterationPage = By.xpath("(//span[@class='mat-ripple mat-button-ripple'])[5]");
+	public static By ConfirmPasswordFieldErrorText = By.xpath("//mat-error[text()=' Password do not match ']");
 	
 	public boolean DisplayingUserRegistrationHeader() {
 		return driver.findElement(UserRegistrationHeader).isDisplayed();
@@ -87,5 +87,9 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  	
  	public void ClickingLoginButtonInRegistrationPage() {
  		driver.findElement(loginButtonInRegisterationPage).click();
+ 	}
+ 	
+ 	public boolean DisplayingErrorInConfirmPasswordField()  {
+ 		return driver.findElement(ConfirmPasswordFieldErrorText).isDisplayed();
  	}
 }

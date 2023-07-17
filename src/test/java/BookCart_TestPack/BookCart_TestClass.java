@@ -126,7 +126,24 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		Assert.assertTrue(registrationPage.DisplayingCriteriaErrorTextInPasswordField());
-		// Password & Confirm Password Appears in Red Color
+		Thread.sleep(2000);
+	}
+	
+	@Test // Test Case -9
+	//  Verify if user is able to register  by entering the wrong password  in Confrim Password Box
+	public void TestCase_9() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringDataInFirstNameTextfield();
+		registrationPage.EnteringDataInLastNameTextField();
+		registrationPage.EnteringDataInUserNameTextfield();
+		registrationPage.EnteringDataInPasswordField();
+		registrationPage.EnterWrongCriteriaInConfirmPasswordField();
+		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingErrorInConfirmPasswordField());
 		Thread.sleep(2000);
 		
 	}
