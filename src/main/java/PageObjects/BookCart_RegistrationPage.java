@@ -29,6 +29,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 	public static By errorTextFirstNameIsRequired = By.xpath("//mat-error[text()='First Name is required']");
 	public static By errorTextLastNameIsRequired = By.xpath("//mat-error[text()='Last Name is required']");
 	public static By errorTextUserNameIsRequired = By.xpath("//mat-error[text()='User Name is required ']");
+	public static By errorTextPasswordIsRequired = By.xpath("//mat-error[text()='Password is required ']");
 	
 	public boolean DisplayingUserRegistrationHeader() {
 		return driver.findElement(UserRegistrationHeader).isDisplayed();
@@ -128,4 +129,11 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  		return driver.findElement(errorTextUserNameIsRequired).isDisplayed();
  	}
  	
+ 	public void ClickingPasswordField() {
+ 		driver.findElement(PasswordField).click();
+ 	}
+ 	
+ 	public boolean DisplayingErrorPasswordIsRequired() {
+ 		return driver.findElement(errorTextPasswordIsRequired).isDisplayed();
+ 	}
  }
