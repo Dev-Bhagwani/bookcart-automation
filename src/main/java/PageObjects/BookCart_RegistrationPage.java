@@ -20,7 +20,8 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 	public static By EyeButton1 = By.xpath("(//div/mat-icon[@data-mat-icon-type='font'])[1]"); 
 	public static By confirmPasswordField = By.xpath("//input[@data-placeholder='Confirm Password']");
 	public static By EyeButton2 = By.xpath("(//div/mat-icon[@data-mat-icon-type='font'])[2]");
-	public static By GenderRadioButtonBy = By.xpath("(//span[@class='mat-radio-outer-circle'])[1]");
+	public static By MaleGenderRadioButton = By.xpath("(//span[@class='mat-radio-outer-circle'])[1]");
+	public static By FemaleGenderRadioButton = By.xpath("(//span[@class='mat-radio-container'])[2]");
 	public static By RegisterButton = By.xpath("//mat-card-actions/button[@class='mat-focus-indicator mat-raised-button mat-button-base mat-primary']");
 	public static By errorTextUserNameIsNotAvailable = By.xpath("//mat-error[text()='User Name is not available']");
 	public static By CriteriaErrorTextPasswordField = By.xpath("//mat-error[@id='mat-error-0']");
@@ -80,8 +81,8 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 		driver.findElement(EyeButton2).click();
 	}
 	
-	public void ClickingGenderRadioButton() {
-		driver.findElement(GenderRadioButtonBy).click();
+	public void ClickingMaleGenderRadioButton() {
+		driver.findElement(MaleGenderRadioButton).click();
 	}
 	
  	public void ClickingRegisterButton() {
@@ -139,5 +140,9 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  	
  	public void ClickingConfirmPasswordField() {
  		driver.findElement(confirmPasswordField).click();
+ 	}
+ 	
+ 	public void ClickingFemaleGenderRadiobutton() {
+ 		driver.findElement(FemaleGenderRadioButton).click();
  	}
  }

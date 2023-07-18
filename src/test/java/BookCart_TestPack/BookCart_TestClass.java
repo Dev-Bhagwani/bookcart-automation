@@ -32,7 +32,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingEyeButton1();
 		registrationPage.EnteringDataInConfirmPasswordField();
 		registrationPage.ClickingEyeButton2();
-		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingMaleGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 	}
 	@Test  // Test Case -3
@@ -69,7 +69,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.EnteringDataInUserNameTextfield();
 		registrationPage.EnteringDataInPasswordField();
 		registrationPage.EnteringDataInConfirmPasswordField();
-		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingMaleGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		// First Name appears in red color
 	}
@@ -85,7 +85,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.EnteringDataInUserNameTextfield();
 		registrationPage.EnteringDataInPasswordField();
 		registrationPage.EnteringDataInConfirmPasswordField();
-		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingMaleGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		// Last Name Appears in Red Color
 	}	
@@ -100,7 +100,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.EnteringDataInFirstNameTextfield();
 		registrationPage.EnteringDataInLastNameTextField();
 		registrationPage.EnteringDataInUserNameTextfield();
-		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingMaleGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		// Password & Confirm Password Appears in Red Color
 	}
@@ -117,7 +117,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.EnteringDataInUserNameTextfield();
 		registrationPage.EnteringWrongCriteriaInPassowrdField();
 		registrationPage.EnterWrongCriteriaInConfirmPasswordField();
-		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingMaleGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		Assert.assertTrue(registrationPage.DisplayingCriteriaErrorTextInPasswordField());
 	}
@@ -134,7 +134,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.EnteringDataInUserNameTextfield();
 		registrationPage.EnteringDataInPasswordField();
 		registrationPage.EnterWrongCriteriaInConfirmPasswordField();
-		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingMaleGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		Assert.assertTrue(registrationPage.DisplayingErrorInConfirmPasswordField());
 	}
@@ -169,7 +169,7 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingEyeButton1();
 		registrationPage.EnteringDataInConfirmPasswordField();
 		registrationPage.ClickingEyeButton2();
-		registrationPage.ClickingGenderRadioButton();
+		registrationPage.ClickingMaleGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 	}
 	
@@ -258,6 +258,21 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
 		registrationPage.EnteringDataInConfirmPasswordField();
 		registrationPage.ClickingEyeButton2();
+	}
+	
+	@Test    // Test Case -19
+	//   Verify if user is able to register after selecting the female option in Radio Button Field
+	public void TestCase_19() {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringDataInFirstNameTextfield();
+		registrationPage.EnteringDataInLastNameTextField();
+		registrationPage.EnteringDataInUserNameTextfield();
+		registrationPage.EnteringDataInPasswordField();
+		registrationPage.EnteringDataInConfirmPasswordField();
+		registrationPage.ClickingFemaleGenderRadiobutton();
 		
 	}
 
