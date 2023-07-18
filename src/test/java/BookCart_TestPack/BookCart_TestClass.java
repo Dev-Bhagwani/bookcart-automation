@@ -238,6 +238,20 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		Thread.sleep(2000);
 	}
 	
+	@Test    //  Test Case-16
+	//   Verify that error message should be removed if user enters the data in Confirm Password Textfield after error is displayed 
+	public void TestCase_16() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.ClickingConfirmPasswordField();
+		registrationPage.ClickingRegisterButton();
+		registrationPage.DisplayingErrorPasswordIsRequired();
+		registrationPage.EnteringDataInConfirmPasswordField();
+		Thread.sleep(2000);
+	}
+	
 	@AfterMethod
 	public void ClosingBrowser() {
 		driver.close();

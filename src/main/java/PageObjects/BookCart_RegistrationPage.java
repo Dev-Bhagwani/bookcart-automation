@@ -136,4 +136,8 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  	public boolean DisplayingErrorPasswordIsRequired() {
  		return driver.findElement(errorTextPasswordIsRequired).isDisplayed();
  	}
+ 	
+ 	public void ClickingConfirmPasswordField() {
+ 		driver.findElement(confirmPasswordField).click();
+ 	}
  }
