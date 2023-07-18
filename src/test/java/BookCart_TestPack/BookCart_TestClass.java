@@ -249,6 +249,18 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingEyeButton1();
 	}
 	
+	@Test // Test Case -18
+	// Verify That the Confirm Password field is encrypted 
+	public void TestCase_18() {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringDataInConfirmPasswordField();
+		registrationPage.ClickingEyeButton2();
+		
+	}
+
 	@AfterMethod
 	public void ClosingBrowser() {
 		driver.close();
