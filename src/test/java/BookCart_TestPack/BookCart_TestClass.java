@@ -34,7 +34,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingEyeButton2();
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
-		Thread.sleep(2000);
 	}
 	@Test  // Test Case -3
 	public void TestCase_3() throws InterruptedException {
@@ -45,7 +44,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		loginPage.EnteringDataInUsernameField();
 		loginPage.EnteringDataInPasswordField();
 		loginPage.ClickingLoginButton();
-		Thread.sleep(2000);
 	}
 	
 	@Test  //Test Case -4
@@ -58,7 +56,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 	registrationPage.EnteringDataInUserNameTextfield();
 	registrationPage.ClickingRegisterButton();
 	Assert.assertTrue(registrationPage.DisplayingUserNameIsNotAvailable());
-	Thread.sleep(2000);
 	}
 	
 	@Test   // Test Case -5
@@ -75,7 +72,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		// First Name appears in red color
-		Thread.sleep(2000);
 	}
 	
 	@Test   // Test Case-6
@@ -92,7 +88,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		// Last Name Appears in Red Color
-		Thread.sleep(2000);
 	}	
 	
 	@Test  // Test Case -7
@@ -108,7 +103,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		// Password & Confirm Password Appears in Red Color
-		Thread.sleep(2000);
 	}
 	
 	@Test  // Test Case -8
@@ -126,7 +120,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		Assert.assertTrue(registrationPage.DisplayingCriteriaErrorTextInPasswordField());
-		Thread.sleep(2000);
 	}
 	
 	@Test // Test Case -9
@@ -144,7 +137,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
 		Assert.assertTrue(registrationPage.DisplayingErrorInConfirmPasswordField());
-		Thread.sleep(2000);
 	}
 	
 	@Test  // Test Case -10
@@ -179,7 +171,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingEyeButton2();
 		registrationPage.ClickingGenderRadioButton();
 		registrationPage.ClickingRegisterButton();
-		Thread.sleep(2000);
 	}
 	
 	@Test  // Test Case -12
@@ -193,7 +184,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingRegisterButton();
 		registrationPage.DisplayingErrorFirstNameIsRequired();
 		registrationPage.EnteringDataInFirstNameTextfield();
-		Thread.sleep(2000);
 	}
 	
 	@Test  // Test Case -13
@@ -207,7 +197,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingRegisterButton();
 		registrationPage.DisplayingErrorLastNameIsRequired();
 		registrationPage.EnteringDataInLastNameTextField();
-		Thread.sleep(2000);
 	}
 	
 	@Test  // Test Case -14
@@ -221,7 +210,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingRegisterButton();
 		registrationPage.DisplayingErrorUserNameIsRequired();
 		registrationPage.EnteringDataInUserNameTextfield();
-		Thread.sleep(2000);
 	}
 	
 	@Test // Test Case
@@ -235,7 +223,6 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingRegisterButton();
 		registrationPage.DisplayingErrorPasswordIsRequired();
 		registrationPage.EnteringDataInPasswordField();
-		Thread.sleep(2000);
 	}
 	
 	@Test    //  Test Case-16
@@ -249,7 +236,17 @@ public void BookCartRegister() throws IOException, InterruptedException{
 		registrationPage.ClickingRegisterButton();
 		registrationPage.DisplayingErrorPasswordIsRequired();
 		registrationPage.EnteringDataInConfirmPasswordField();
-		Thread.sleep(2000);
+	}
+	
+	@Test  // Test Case -17
+	// Verify That the Password field is encrypted 
+	public void TestCase_17() throws InterruptedException {
+		homePage.clickingLoginButton();
+		Assert.assertTrue(loginPage.DisplayingLoginLogo());
+		loginPage.clickingRegisterButton();
+		Assert.assertTrue(registrationPage.DisplayingUserRegistrationHeader());
+		registrationPage.EnteringDataInPasswordField();
+		registrationPage.ClickingEyeButton1();
 	}
 	
 	@AfterMethod
