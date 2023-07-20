@@ -20,7 +20,7 @@ public class BookCart_HomePage extends BookCart_Base{
 		return driver.findElement(bookCartLogo).isDisplayed();
 	}
 	
-	public void clickingLoginButton() {
+	public void clickLoginButton() {
 		 driver.findElement(loginButton).click();
 	}
 	

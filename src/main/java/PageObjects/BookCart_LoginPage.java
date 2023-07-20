@@ -26,7 +26,7 @@ public class BookCart_LoginPage extends BookCart_Base{
 			return driver.findElement(registerButton).isDisplayed();
 		}
 		
-		public void clickingRegisterButton() {
+		public void clickRegisterButton() {
 			 driver.findElement(registerButton).click();
 		}
 	
@@ -38,7 +38,7 @@ public class BookCart_LoginPage extends BookCart_Base{
 			driver.findElement(passowrdTextField).sendKeys(prop.getProperty("Password"));
 		}
 		
-		public void clickingLoginButton() {
+		public void clickLoginButton() {
 			driver.findElement(loginButton).click();
 		}
 }

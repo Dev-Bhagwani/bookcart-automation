@@ -68,7 +68,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 		driver.findElement(confirmPasswordField).sendKeys(prop.getProperty("WrongPasswordCriteria"));
 	}
 	
-	public void clickingPasswordEyeIcon() {
+	public void clickPasswordEyeIcon() {
 		driver.findElement(clickOnPasswordEyeIcon).click();
 	}
 	
@@ -76,7 +76,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 		driver.findElement(confirmPasswordField).sendKeys(prop.getProperty("Password"));
 	}
 	
-	public void clickingConfirmPasswordEyeIcon() {
+	public void clickConfirmPasswordEyeIcon() {
 		driver.findElement(clickOnPasswordEyeIcon).click();
 	}
 	
@@ -84,7 +84,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 		driver.findElement(maleGenderRadioButton).click();
 	}
 	
- 	public void clickingRegisterButton() {
+ 	public void clickRegisterButton() {
 		driver.findElement(registerButton).click();
 	}
  	
@@ -96,7 +96,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  		return driver.findElement(criteriaErrorTextPasswordField).isDisplayed();
  	}
  	
- 	public void clickingLoginButtonInRegistrationPage() {
+ 	public void clickLoginButtonInRegistrationPage() {
  		driver.findElement(loginButtonInRegisterationPage).click();
  	}
  	
@@ -104,7 +104,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  		return driver.findElement(confirmPasswordFieldErrorText).isDisplayed();
  	}
  	
- 	public void clickingFirstNameTextField() {
+ 	public void clickFirstNameTextField() {
  		driver.findElement(firstNameTextfield).click();
  	}
  	
@@ -112,7 +112,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  		return driver.findElement(errorTextFirstNameIsRequired).isDisplayed();
  	}
  	
- 	public void clickingLastNameTextField() {
+ 	public void clickLastNameTextField() {
  		driver.findElement(lastNameTextfield).click();
  	}
  	
@@ -120,7 +120,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  		return driver.findElement(errorTextLastNameIsRequired).isDisplayed();
  	}
  	
- 	public void clickingUserNameTextField() {
+ 	public void clickUserNameTextField() {
  		driver.findElement(usernameTextField).click(); 	
  	}
  	
@@ -128,7 +128,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  		return driver.findElement(errorTextUserNameIsRequired).isDisplayed();
  	}
  	
- 	public void clickingPasswordField() {
+ 	public void clickPasswordField() {
  		driver.findElement(passwordField).click();
  	}
  	
@@ -136,7 +136,7 @@ public class BookCart_RegistrationPage extends BookCart_Base{
  		return driver.findElement(errorTextPasswordIsRequired).isDisplayed();
  	}
  	
- 	public void clickingConfirmPasswordField() {
+ 	public void clickConfirmPasswordField() {
  		driver.findElement(confirmPasswordField).click();
  	}
  	
