@@ -14,10 +14,9 @@ public class BookCart_HomePage extends BookCart_Base{
 
 	public static By bookCartLogo = By.xpath("//span[@class='mat-button-wrapper']");
 	public static By loginButton = By.xpath("//button[@class='mat-focus-indicator mat-button mat-button-base ng-star-inserted']");
-	public static By MatIconExistingUsername = By.xpath("(//span[@class='mat-button-wrapper'])[4]");
+	public static By matIconExistingUsername = By.xpath("(//span[@class='mat-button-wrapper'])[4]");
 	
-	public boolean DisplayingHomeCartLogo() {
-		waitForElementToBeVisibile(bookCartLogo);
+	public boolean displayingHomeCartLogo() {
 		return driver.findElement(bookCartLogo).isDisplayed();
 	}
 	
@@ -25,7 +24,7 @@ public class BookCart_HomePage extends BookCart_Base{
 		 driver.findElement(loginButton).click();
 	}
 	
-	public boolean  DisplayingMatIconExistingUserName() {
-		return driver.findElement(MatIconExistingUsername).isDisplayed();
+	public boolean  displayingMatIconExistingUserName() {
+		return driver.findElement(matIconExistingUsername).isDisplayed();
 	}
 }
