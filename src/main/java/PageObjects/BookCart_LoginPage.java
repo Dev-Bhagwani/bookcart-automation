@@ -12,26 +12,34 @@ public class BookCart_LoginPage extends BookCart_Base{
 			PageFactory.initElements(driver, this);
 		}
 		
-		public static By loginButton = By.xpath("//button[@class='mat-focus-indicator mat-button mat-button-base ng-star-inserted']");
-		public static By loginLogo = By.xpath("//h3[text()='Login']");
-		public static By RegisterButton = By.xpath("//button[@class='mat-focus-indicator mat-elevation-z4 mat-raised-button mat-button-base']");
+		public static By loginHeader = By.xpath("//h3[text()='Login']");
+		public static By registerButton = By.xpath("//button[@class='mat-focus-indicator mat-elevation-z4 mat-raised-button mat-button-base']");
+		public static By usernameTextField = By.xpath("//input[@data-placeholder='Username']");
+		public static By passowrdTextField = By.xpath("//input[@data-placeholder='Password']");
+		public static By loginButton = By.xpath("//button[@class='mat-focus-indicator mat-raised-button mat-button-base mat-primary']");
 		
-		public void clickingLoginButton() {
-			 driver.findElement(loginButton).click();
+		public boolean displayingLoginLogo() {
+			return driver.findElement(loginHeader).isDisplayed();
 		}
 		
-		public boolean DisplayingLoginLogo() {
-			waitForElementToBeVisibile(loginLogo);
-			return driver.findElement(loginLogo).isDisplayed();
+		public boolean displayingRegisterButton() {
+			return driver.findElement(registerButton).isDisplayed();
 		}
 		
-		public boolean DisplayingRegisterButton() {
-			return driver.findElement(RegisterButton).isDisplayed();
+		public void clickRegisterButton() {
+			 driver.findElement(registerButton).click();
+		}
+	
+		public void enterDataInUsernameField() {
+			driver.findElement(usernameTextField).sendKeys(prop.getProperty("UserName"));
 		}
 		
-		public void clickingRegisterButton() {
-			 driver.findElement(RegisterButton).click();
-
+		public void enterDataInPasswordField() {
+			driver.findElement(passowrdTextField).sendKeys(prop.getProperty("Password"));
+		}
+		
+		public void clickLoginButton() {
+			driver.findElement(loginButton).click();
 		}
 }
 
