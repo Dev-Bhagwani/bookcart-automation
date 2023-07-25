@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
 import ResourcePack.BookCart_Base;
+import ResourcePack.PropFileHandler;
 
 public class BookCart_RegistrationPage extends BookCart_Base{
 	
@@ -21,7 +22,8 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 	public static By confirmPasswordField = By.xpath("//input[@data-placeholder='Confirm Password']");
 	public static By EyeButton2 = By.xpath("(//div/mat-icon[@data-mat-icon-type='font'])[2]");
 	public static By GenderRadioButtonBy = By.xpath("(//span[@class='mat-radio-outer-circle'])[1]");
-	public static By RegisterButton = By.xpath("//mat-card-actions/button[@class='mat-focus-indicator mat-raised-button mat-button-base mat-primary']");
+//	public static By registerButton = By.xpath("//button/span[text()='Register']");
+	public static By registerButton = By.xpath("//button[@class='mat-focus-indicator mat-raised-button mat-button-base mat-primary']");
 	
 	public boolean DisplayingUserRegistrationHeader() {
 		return driver.findElement(UserRegistrationHeader).isDisplayed();
@@ -36,7 +38,14 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 	}
 	
 	public void EnteringDataInUserNameTextfield() {
-		driver.findElement(UsernameTextField).sendKeys(prop.getProperty("UserName"));
+//		driver.findElement(UsernameTextField).sendKeys(prop.getProperty("UserName"));
+//		String newUserNameString = prop.getProperty("UserName")+TimeStamp();
+		
+		String newUserNameString = PropFileHandler.readProperty("FirstName")+TimeStamp();
+		driver.findElement(UsernameTextField).sendKeys(newUserNameString);
+		System.out.println("newUserNameString: "+newUserNameString);
+		
+		
 	}
 	
 	public void EnteringDataInPasswordField() {
@@ -57,10 +66,11 @@ public class BookCart_RegistrationPage extends BookCart_Base{
 	
 	public void ClickingGenderRadioButton() {
 		driver.findElement(GenderRadioButtonBy).click();
+		PropFileHandler.writeProperty("NewUsername", "ashcdv21");
 	}
 	
  	public void ClickingRegisterButton() {
- 		waitForElementToBeVisibile(RegisterButton);
-		driver.findElement(RegisterButton).click();
+ 		waitForElementToBeVisibile(registerButton);
+		driver.findElement(registerButton).click();//using click by javascript
 	}
 }

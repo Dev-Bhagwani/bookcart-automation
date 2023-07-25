@@ -12,10 +12,9 @@ public class BookCart_HomePage extends BookCart_Base{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public static By bookCartLogo = By.xpath("//span[@class='mat-button-wrapper']");
+	public static By bookCartLogo = By.xpath("//div[@class='brand-title']");
 	
-	public boolean DisplayingHomeCartLogo() {
-		waitForElementToBeVisibile(bookCartLogo);
-		return driver.findElement(bookCartLogo).isDisplayed();
+	public String displayingHomeCartLogo() {
+		 return driver.findElement(bookCartLogo).getText();
 	}
 }

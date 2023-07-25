@@ -15,7 +15,7 @@ public class BookCart_TestClass extends BookCart_Base {
 	public void BookCartLogin() throws IOException, InterruptedException{
 		
 		// HomePage
-		Assert.assertTrue(homePage.DisplayingHomeCartLogo());
+		Assert.assertTrue(homePage.displayingHomeCartLogo().contains("Book Cart"));
 		
 		//Login Page
 		loginPage.clickingLoginButton();
@@ -33,8 +33,15 @@ public class BookCart_TestClass extends BookCart_Base {
 		registrationPage.EnteringDataInConfirmPasswordField();
 		registrationPage.ClickingEyeButton2();
 		registrationPage.ClickingGenderRadioButton();
+		Thread.sleep(3000);
 		registrationPage.ClickingRegisterButton();
+		loginPage.DisplayingLoginLogo();
+		Thread.sleep(3000);
 	}
+	
+//	public void displayingStoringVlaues() throws FileNotFoundException, IOException {
+//		storingValues();
+//	}
 	
 	@AfterMethod
 	public void ClosingBrowser() {
